@@ -1,0 +1,44 @@
+.cpu-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5%;
+  gap: 0.5rem;
+}
+.cpu-id {
+  display: flex;
+  justify-content: space-evenly;
+}
+.cpu-num {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.cpu-fig {
+  width: 75%;
+  border: 1px solid black;
+  background-color: rgba(192, 255, 255, 0.694);
+}
+.cpu-fig p {
+  font-size: 1rem;
+  font-weight: bolder;
+  text-align: center;
+  padding: 0;
+  margin: 0.5rem;
+}
+
+/* Cache memory table section */
+
+/* Veritical bus line */
+.vl {
+  height: 15px;
+  width: 5px;
+  background-color: rgba(128, 128, 128, 0.733);
+  margin-left: 50%;
+}
+
+/* Procesor Instruction */
+.cpu-instruc {
+  border: 1px dashed grey;
+}

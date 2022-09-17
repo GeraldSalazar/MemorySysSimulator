@@ -1,0 +1,8 @@
+.table-condensed {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+tr td {
+  padding: 0.1rem 2rem;
+  margin: 0;
+}
