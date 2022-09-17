@@ -1,0 +1,9 @@
+.bus {
+  background-color: rgba(69, 40, 165, 0.178);
+}
+.vl {
+  height: 15px;
+  width: 5px;
+  background-color: rgba(128, 128, 128, 0.733);
+  margin-left: 50%;
+}

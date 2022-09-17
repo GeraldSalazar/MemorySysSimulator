@@ -1,0 +1,19 @@
+.cpus-structure {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1%;
+  margin: 1%;
+  margin-bottom: 0;
+}
+.cpus-structure * {
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 200px;
+}
+
+.bus-hl {
+  height: 5px;
+  width: 75%;
+  background-color: rgba(128, 128, 128, 0.733);
+  margin-left: 12.75%;
+}
