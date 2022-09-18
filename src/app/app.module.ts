@@ -8,6 +8,8 @@ import { ProcessorComponent } from './gui/components/processor/processor.compone
 import { CacheMemoryTableComponent } from './gui/components/processor/cache-memory-table/cache-memory-table.component';
 import { BusComponent } from './gui/components/bus/bus.component';
 import { MainMemoryTableComponent } from './gui/components/main-memory-table/main-memory-table.component';
+import { SimControlsComponent } from './gui/sim-controls/sim-controls.component';
+import { ProcessorInstrucComponent } from './gui/components/processor/processor-instruc/processor-instruc.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MainMemoryTableComponent } from './gui/components/main-memory-table/mai
     ProcessorComponent,
     CacheMemoryTableComponent,
     BusComponent,
-    MainMemoryTableComponent
+    MainMemoryTableComponent,
+    SimControlsComponent,
+    ProcessorInstrucComponent
   ],
   imports: [
     BrowserModule,

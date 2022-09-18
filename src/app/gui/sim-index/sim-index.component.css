@@ -17,3 +17,8 @@
   background-color: rgba(128, 128, 128, 0.733);
   margin-left: 12.75%;
 }
+.sim-controls {
+  position: fixed;
+  bottom: 1vw;
+  right: 1vw;
+}

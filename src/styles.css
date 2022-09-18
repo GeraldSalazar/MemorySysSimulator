@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: rgba(216, 216, 216, 0.74);
+}
+
+body {
+  background-color: aliceblue;
+}
