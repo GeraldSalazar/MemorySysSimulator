@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { BusActions } from './bus-actions-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +14,8 @@ export class BusService {
   cpu4!: Worker;
   cpus: Worker[] = [this.cpu1, this.cpu2];
 
+  $testSubject = new Subject<any>();
+
   constructor() { }
 
   // todo: DEFINE DATA OBJECT INTERFACE
@@ -24,8 +28,12 @@ export class BusService {
   getDataFromCPUs(){
     this.cpus.forEach((cpu) => {
       cpu.onmessage = ({ data }) => {
+
         console.log(data)
-        //this.postActionToCPUs(data)
+        if(data.desc === BusActions.instrucToDisplay){
+          this.$testSubject.next(data)
+        }
+
       }
     })
   }
