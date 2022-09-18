@@ -1,14 +1,10 @@
 
+import { Operations } from './instruc-operations-enum';
 import { Instruction } from './instruction-interface'
 import { generateRandomDataToWrite } from './instruction-units/random-data-gen';
 import { generateRandomDir } from './instruction-units/random-dir-gen';
 import { generateRandomOperation } from './instruction-units/random-operation-gen';
 
-enum Operations {
-    calcOp = 'CALC',
-    readOp = 'READ',
-    writeOp = 'WRITE'
-}
 
 export function buildInstruction(cpuNum: number){
     //Instruction Format: {cpuNum: number, op: string, dir: string, data: string}

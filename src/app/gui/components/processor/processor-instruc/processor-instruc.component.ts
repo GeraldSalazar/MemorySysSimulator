@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BusService } from 'src/app/bus/bus.service';
 
 @Component({
   selector: 'app-processor-instruc',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcessorInstrucComponent implements OnInit {
   instrucFetched: string = 'READ 111'
-  constructor() { }
+  constructor(private bus: BusService) { }
 
   ngOnInit(): void {
+    // this.bus.$testSubject.subscribe(value => {
+    //   this.instrucFetched = value.instruction
+    // })
   }
 
 }

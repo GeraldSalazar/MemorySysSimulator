@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BusService } from 'src/app/bus/bus.service';
 
 @Component({
   selector: 'app-sim-index',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimIndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bus: BusService) { }
 
   ngOnInit(): void {
+    //this.bus.getDataFromCPUs()
+    //this.bus.$testSubject.subscribe((value) => console.log(value))
   }
 
 }
