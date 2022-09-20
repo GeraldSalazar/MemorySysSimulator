@@ -7,13 +7,16 @@ import { BusActions } from "../bus/bus-actions-enum"
 import { CacheBlock } from "./shared/cache-block-interface"
 import { CacheState } from "./shared/cache-states-enum"
 import { stringifyInstruction } from "../bus/stringify-instruc"
+import { MESI } from "./mesi-fsm/mesi-fsm"
+import { checkIfBlockIsCached } from "./shared/check-if-block-is-cached"
+import { sendInstructionToBus } from "./shared/send-instruc-to-bus"
 
 // Local cache CPU1
 const localCache = new Map<number, CacheBlock>()
-localCache.set(0, {state: 'I', dir: 'xxx', data: '0x0000'})
-localCache.set(1, {state: 'I', dir: 'xxx', data: '0x0000'})
-localCache.set(2, {state: 'I', dir: 'xxx', data: '0x0000'})
-localCache.set(3, {state: 'I', dir: 'xxx', data: '0x0000'})
+localCache.set(0, {state: Object.create(MESI), dir: 'xxx', data: '0x0000'})
+localCache.set(1, {state: Object.create(MESI), dir: 'xxx', data: '0x0000'})
+localCache.set(2, {state: Object.create(MESI), dir: 'xxx', data: '0x0000'})
+localCache.set(3, {state: Object.create(MESI), dir: 'xxx', data: '0x0000'})
 
 // Global cpu identifier
 const cpuNum = 1
@@ -25,22 +28,18 @@ addEventListener('message', ({ data }) => {
   console.log(response, data)
 });
 
-setTimeout(() => {
-  sendInstructionToDisplay(buildInstruction(cpuNum))
-
-}, 2500 )
-
-setTimeout(() => {
-  sendInstructionToDisplay(buildInstruction(cpuNum))
-
-}, 5500 )
-
-function sendInstructionToDisplay(instruc: Instruction){
-  postMessage({instruction: instruc, desc: BusActions.instrucToDisplay})
+function instructionGeneration(rate: number){
+  setInterval(() => {
+  //sendInstructionToDisplay(buildInstruction(cpuNum))
+    const newInstruc = buildInstruction(cpuNum)
+    sendInstructionToBus(newInstruc, cpuNum)
+  }, rate*1000 )
 }
-function checkIfValidStateToFetch(){
-  const validStates = [CacheState.exclusive, CacheState.shared, CacheState.modified]
-}
+
+//instructionGeneration(7)
+console.log(localCache)
+
+
 
 
 //Local cache is in each worker
