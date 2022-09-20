@@ -11,7 +11,7 @@ export class SimIndexComponent implements OnInit {
   constructor(private bus: BusService) { }
 
   ngOnInit(): void {
-    //this.bus.getDataFromCPUs()
+    this.bus.getDataFromCPUs()
     //this.bus.$testSubject.subscribe((value) => console.log(value))
   }
 

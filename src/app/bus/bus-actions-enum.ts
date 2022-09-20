@@ -1,3 +1,6 @@
 export enum BusActions {
-    instrucToDisplay
-  }
+    instrucToDisplay,
+    blocksInvalidation,
+    noAction,
+    writeBack
+}
