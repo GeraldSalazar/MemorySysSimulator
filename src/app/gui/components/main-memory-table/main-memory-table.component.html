@@ -8,38 +8,11 @@
         </tr>
       </thead>
       <tbody class="text-center fw-bold">
-        <tr>
-          <td>000</td>
-          <td>0xYYYY</td>
+        <tr *ngFor="let memRow of mainMem | keyvalue">
+          <td>{{memRow.value.dir}}</td>
+          <td>{{memRow.value.data}}</td>
         </tr>
-        <tr>
-          <td>001</td>
-          <td>0xYYYY</td>
-        </tr>
-        <tr>
-          <td>010</td>
-          <td>0xYYYY</td>
-        </tr>
-        <tr>
-          <td>011</td>
-          <td>0xYYYY</td>
-        </tr>
-        <tr>
-          <td>100</td>
-          <td>0xYYYY</td>
-        </tr>
-        <tr>
-          <td>101</td>
-          <td>0xYYYY</td>
-        </tr>
-        <tr>
-          <td>110</td>
-          <td>0xYYYY</td>
-        </tr>
-        <tr>
-          <td>111</td>
-          <td>0xYYYY</td>
-        </tr>
+       
       </tbody>
     </table>
   </div>
