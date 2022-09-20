@@ -1,8 +1,8 @@
 /// <reference lib="webworker" />
 
-import { buildInstruction } from "../instruction-building/instruction-builder";
-import { CacheBlock } from "./shared/cache-block-interface"
-import { sendInstructionToBus } from "./shared/send-instruc-to-bus";
+import { buildInstruction } from "../../instruction-building/instruction-builder";
+import { CacheBlock } from "../shared/cache-block-interface"
+import { sendInstructionToBus } from "../shared/send-instruc-to-bus";
 
 // Local cache CPU2
 // const localCache = new Map<number, CacheBlock>()
