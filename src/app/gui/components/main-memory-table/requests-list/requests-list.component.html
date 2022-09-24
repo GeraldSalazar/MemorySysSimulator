@@ -1,0 +1,13 @@
+
+<section>
+    <h6 class="text-center">Read requests</h6>
+    <ul class="list-group fs-6">
+        <li *ngFor="let instruc of readRequests" class="list-group-item">{{instruc | stringifyInstruc}}</li>
+    </ul>
+</section>
+<section>
+    <h6 class="text-center">Write requests</h6>
+    <ul class="list-group">
+        <li *ngFor="let instruc of writebackRequests" class="list-group-item">{{instruc.instruction | stringifyInstruc}} -> {{instruc.oldData}}</li>
+    </ul>
+</section>

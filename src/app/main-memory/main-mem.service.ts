@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
+import { Instruction } from '../instruction-building/instruction-interface';
 import { MainMemory } from './main-mem-data-struct';
+import { dataRequestInstructions, writeBackInstructions } from './read-write-instrucs-list';
 @Injectable({
   providedIn: 'root'
 })
@@ -7,10 +9,15 @@ export class MainMemService {
 
   constructor() { }
 
+  lastMemoryRead?: number;
+  lastCacheData: string = ''
+
   //read a specific memory block with the provided dir
-  readMemoryBlock(dir: string){
+  readMemoryBlock(instruc: Instruction){
+    dataRequestInstructions.push(instruc)
     for(const [blockNum, memBlock] of MainMemory){
-      if(memBlock.dir === dir){
+      if(memBlock.dir === instruc.dir){
+        this.lastMemoryRead = blockNum
         return memBlock.data
       }
     }
@@ -18,9 +25,10 @@ export class MainMemService {
   }
 
   // returns true if data was update successfully
-  writeBack(dir: string, dataToWrite: string): boolean{
+  writeBack(dir: string, dataToWrite: string, instruc: Instruction): boolean{
     for(const [blockNum, memBlock] of MainMemory){
       if(memBlock.dir === dir){
+        writeBackInstructions.push({instruction: instruc, oldData: this.lastCacheData})
         memBlock.data = dataToWrite
         return true
       }

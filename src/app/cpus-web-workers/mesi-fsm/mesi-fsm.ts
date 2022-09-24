@@ -1,6 +1,11 @@
+import { CacheBlock } from "../shared/cache-block-interface";
 import { CacheState } from "../shared/cache-states-enum"
-import { BusActions } from "../../bus/bus-actions-enum"
 import { FSM_MESI } from "./mesi-fsm-type";
+
+//'readExclusive'
+//'readShared'
+//'writeBlock'
+//'snoopInvalidation'
 
 
 
@@ -8,71 +13,91 @@ export const MESI: FSM_MESI = {
     state: CacheState.invalid,
     transitions: {
         I: {
-            readExclusive: function () {
-                console.log('Read Exclusive Block');
+            readExclusive: function() {
                 MESI.changeState(CacheState.exclusive);
+                return MESI.state
             },
             readShared: function () {
-                console.log('Read Shared Block');
                 MESI.changeState(CacheState.shared);
+                return MESI.state
             },
             writeBlock: function() {
-                console.log('Write Block. Modified State');
                 MESI.changeState(CacheState.modified)
+                return MESI.state
             }
         },
         S: {
+            readExclusive: function() {
+                MESI.changeState(CacheState.shared);
+                return MESI.state
+            },
             writeBlock: function() {
-                console.log('Write Block. Modified State');
                 MESI.changeState(CacheState.modified)
-                return BusActions.blocksInvalidation
+                return MESI.state
             },
             snoopInvalidation: function(){
-                console.log('Invalidating State');
                 MESI.changeState(CacheState.invalid)
-                return BusActions.noAction
-            }
+                return MESI.state
+            },
+            readShared: function () {
+                MESI.changeState(CacheState.shared);
+                return MESI.state
+            },
 
         },
         M: {
+            readExclusive: function() {
+                MESI.changeState(CacheState.modified);
+                return MESI.state
+            },
             readShared: function () {
-                console.log('Read Shared Block');
                 MESI.changeState(CacheState.shared);
-                return BusActions.writeBack
+                return MESI.state
             },
             snoopInvalidation: function(){
-                console.log('Invalidating State');
                 MESI.changeState(CacheState.invalid)
-                return BusActions.writeBack
-            }
+                return MESI.state
+            },
+            writeBlock: function() {
+                MESI.changeState(CacheState.modified)
+                return MESI.state
+            },
 
         },
         E: {
+            readExclusive: function() {
+                MESI.changeState(CacheState.exclusive);
+                return MESI.state
+            },
             writeBlock: function() {
-                console.log('Write Block. Modified State');
                 MESI.changeState(CacheState.modified)
-                return BusActions.noAction
+                return MESI.state
             },
             snoopInvalidation: function(){
-                console.log('Invalidating State');
                 MESI.changeState(CacheState.invalid)
-                return BusActions.noAction
-            }
+                return MESI.state
+            },
+            readShared: function () {
+                MESI.changeState(CacheState.shared);
+                return MESI.state
+            },
 
         }
     },
     changeState(newState: CacheState) {
-        this.state = newState
+        MESI.state = newState
     },
-    dispatch(actionName: any) {
-            const actions = this.transitions[this.state];
+    dispatch(actionName: string) {
             const action = this.transitions[this.state][actionName];
-
-            console.log(action)
-            if (action) {
-                action.apply(MESI);
-            } else {
-                 //action is not valid for current state
+            //console.log(action)
+            if(action){
+                return action.apply(this)
+            }else{
+                return this.state+' '+actionName
             }
     }
 }
+
+
+
+  

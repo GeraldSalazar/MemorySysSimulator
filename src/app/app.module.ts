@@ -10,6 +10,9 @@ import { BusComponent } from './gui/components/bus/bus.component';
 import { MainMemoryTableComponent } from './gui/components/main-memory-table/main-memory-table.component';
 import { SimControlsComponent } from './gui/sim-controls/sim-controls.component';
 import { ProcessorInstrucComponent } from './gui/components/processor/processor-instruc/processor-instruc.component';
+import { InstructionsLogComponent } from './gui/components/instructions-log/instructions-log.component';
+import { StringifyInstrucPipe } from './gui/components/instructions-log/stringify-instruc.pipe';
+import { RequestsListComponent } from './gui/components/main-memory-table/requests-list/requests-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ProcessorInstrucComponent } from './gui/components/processor/processor-
     BusComponent,
     MainMemoryTableComponent,
     SimControlsComponent,
-    ProcessorInstrucComponent
+    ProcessorInstrucComponent,
+    InstructionsLogComponent,
+    StringifyInstrucPipe,
+    RequestsListComponent
   ],
   imports: [
     BrowserModule,
