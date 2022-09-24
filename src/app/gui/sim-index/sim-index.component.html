@@ -1,8 +1,8 @@
 <div class="cpus-structure">
-    <app-processor></app-processor>
-    <app-processor></app-processor>
-    <app-processor></app-processor>
-    <app-processor></app-processor>
+    <app-processor [cpuNum]="1"></app-processor>
+    <app-processor [cpuNum]="2"></app-processor>
+    <app-processor [cpuNum]="3"></app-processor>
+    <app-processor [cpuNum]="4"></app-processor>
 </div>
 <div class="bus-hl"></div>
 <app-bus></app-bus>
@@ -12,3 +12,4 @@
 <section class="sim-controls">
     <app-sim-controls></app-sim-controls>
 </section>
+<app-instructions-log></app-instructions-log>

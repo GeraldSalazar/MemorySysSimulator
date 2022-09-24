@@ -1,0 +1,11 @@
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasInstLog" aria-labelledby="offcanvasInstLog">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Instructions Generated for CPU{{CPUNum}}</h5>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let instruc of instructionList" class="list-group-item"><i class="fa-solid fa-scroll m-2"></i> {{instruc | stringifyInstruc}}</li>
+          </ul>
+    </div>
+</div>

@@ -8,29 +8,11 @@
       </tr>
     </thead>
     <tbody class="text-center fw-bold">
-      <tr>
-        <td>0</td>
-        <td>M</td>
-        <td>000</td>
-        <td>0xYYYY</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>E</td>
-        <td>001</td>
-        <td>0xYYYY</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>S</td>
-        <td>010</td>
-        <td>0xYYYY</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>I</td>
-        <td>011</td>
-        <td>0xYYYY</td>
+      <tr *ngFor="let memRow of cacheToDisplay | keyvalue">
+        <td>{{memRow.key}}</td>
+        <td>{{memRow.value.state.state}}</td>
+        <td>{{memRow.value.dir}}</td>
+        <td>{{memRow.value.data}}</td>
       </tr>
     </tbody>
 </table>

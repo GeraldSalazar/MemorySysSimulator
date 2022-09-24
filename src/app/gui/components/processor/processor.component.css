@@ -5,10 +5,12 @@
   padding: 2.5%;
   gap: 0.5rem;
 }
+
 .cpu-id {
   display: flex;
   justify-content: space-evenly;
 }
+
 .cpu-num {
   display: flex;
   align-items: center;
@@ -16,10 +18,11 @@
   padding: 0;
 }
 .cpu-fig {
-  width: 75%;
+  width: 65%;
   border: 1px solid black;
-  background-color: rgba(192, 255, 255, 0.694);
+  background-color: rgba(213, 252, 252, 0.596);
 }
+
 .cpu-fig p {
   font-size: 1rem;
   font-weight: bolder;

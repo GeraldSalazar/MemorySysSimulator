@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BusService } from 'src/app/bus/bus.service';
-
 @Component({
   selector: 'app-sim-index',
   templateUrl: './sim-index.component.html',

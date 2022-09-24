@@ -1,13 +1,17 @@
-<div class="cpu-container bg-white">
+<div class="cpu-container bg-white" >
     <section class="cpu-id">
-        <h5 class="cpu-num">1</h5>
+        <h5 class="cpu-num">{{cpuNum}}</h5>
         <div class="cpu-fig"><p>CPU</p></div>
+        <button class="btn btn-light" (click)="setCPUNumToLog()" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasInstLog" aria-controls="offcanvasInstLog">
+            <i class="fa-solid fa-circle-info"></i>
+        </button>
     </section>
     <section class="cache-mem">
-        <app-cache-memory-table></app-cache-memory-table>
+        <app-cache-memory-table [cpuNum]="cpuNum"></app-cache-memory-table>
     </section>
     <section class="cpu-instruc">
-        <app-processor-instruc></app-processor-instruc>
+        <app-processor-instruc [cpuNum]="cpuNum"></app-processor-instruc>
     </section>
 </div>
 <div class="vl"></div>
+
