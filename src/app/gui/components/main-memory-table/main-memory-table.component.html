@@ -1,0 +1,21 @@
+<div class="bg-transparent">
+  <div class="d-flex flex-column p-1 mb-3 border border-dark">
+    <h6 class="text-center">Main Memory</h6>
+    <table class="table table-condensed table-bordered border-secondary m-0 table-hover">
+      <thead>
+        <tr class="text-center table-danger border-secondary lh-1">
+          <th scope="col">Dir</th>
+          <th scope="col">Data</th>
+        </tr>
+      </thead>
+      <tbody class="text-center fw-bold">
+        <tr *ngFor="let memRow of mainMem | keyvalue">
+          <td>{{memRow.value.dir}}</td>
+          <td>{{memRow.value.data}}</td>
+        </tr>
+       
+      </tbody>
+    </table>
+  </div>
+  <app-requests-list class="d-flex gap p-2"></app-requests-list>
+</div>

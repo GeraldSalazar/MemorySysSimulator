@@ -1,0 +1,9 @@
+<div class="controls-bg p-2 d-flex flex-column align-items-center rounded"> 
+    <h6 class="text-center">Simulator Controls</h6>
+    <label for="rate">Instruction generation rate: <input class="m-2 rate-input" type="number" [value]="10" id="rate" #rateValue> secs</label>
+    <section>
+        <button (click)="startInterval(+rateValue.value)" type="button" style="margin-right: 5px;" class="btn btn-success"><i class="fa-solid fa-play m-1"></i>Start</button>
+        <button (click)="stopInterval()" type="button" class="btn btn-secondary"><i class="fa-solid fa-pause m-1"></i>Pause</button>
+    </section>
+    <label for="rate">Instruction test: <input class="m-2" type="tex " placeholder="Pi: WRITE 111, 0xABCD" id="rate"></label>
+</div>

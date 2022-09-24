@@ -1,0 +1,15 @@
+.list-group {
+  max-height: 300px;
+  background-color: transparent !important;
+  overflow: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.list-group::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+li {
+  font-size: 0.85rem;
+  padding: 0.2rem;
+}
