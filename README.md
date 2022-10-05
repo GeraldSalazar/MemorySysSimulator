@@ -13,6 +13,11 @@ o escritura) a diferentes regiones de memoria de forma aleatoria.
 
 ![plot](docs/architecture.png)
 
+
+![plot](docs/ui-preview.png)
+![plot](docs/ui-preview2.png)
+![plot](docs/ui-preview3.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
 
 ## Development server
