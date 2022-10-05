@@ -11,7 +11,6 @@ MemorySysSimulator es una aplicación de software con interfaz gráfica que mode
 5. Cada procesador deberé generar solicitudes de procesamiento o acceso a memoria (lectura
 o escritura) a diferentes regiones de memoria de forma aleatoria.
 
-[System Architecture Overview](docs/architecture.png)
 ![plot](docs/architecture.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
