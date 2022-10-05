@@ -45,7 +45,7 @@ Modelo de memoria caché y sistema de coherencia:
 Cada procesador tiene su caché L1, se pueden almacenar 4 bloques en cada una y posee correspondencia asociativa por set one-way.  
 Esta memoria sirve para almacenar cuatro bloques que requiera el procesador. La información que debe contener es:  
 Número de bloque.  
-Estado de coherencia: M (modificado), S (shared), I (inv´alido), E (exclusive).  
+Estado de coherencia: M (modificado), S (shared), I (inválido), E (exclusive).  
 Dirección de memoria.  
 Dato de 16 bits en hexadecimal.  
 Adicional al modelo de la caché, implementa un modelo del sistema de coherencia, dentro del controlador, que asegura la coherencia entre todas las cachés. El modelo 
