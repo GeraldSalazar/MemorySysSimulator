@@ -24,16 +24,16 @@ Modelo del sistema multiprocesador:
   Cada una de las instrucciones se genera utilizando una distribución de probabilidad formal de Poisson.
 
 Una instrucción generada debe tener los siguientes componentes:
-  Número de procesador.
-  Operación: read, write y calc.
-  En el caso de write se indica la dirección de memoria (binario) y el dato aescribir (hexadecimal), respectivamente.
+- Número de procesador.
+- Operación: read, write y calc.
+- En el caso de write se indica la dirección de memoria (binario) y el dato aescribir (hexadecimal), respectivamente.
 Una instrucción tiene el siguiente formato de ejemplo:
   P0 : READ 0100
   P1 : CALC
   P3 : WRITE 1010;4A3B
   P4 : CALC
  
-Modelo de memoria principal:
+*Modelo de memoria principal:
 La memoria principal es unificada y compartida, comunicándose con los procesadores mediante un único bus. 
 Las funciones del modelo memoria principal serán:
 1. Actualiza el contenido compartido de los bloques en escrituras (según política de write back).
@@ -41,7 +41,7 @@ Las funciones del modelo memoria principal serán:
 El sistema simula las condiciones propias de pared de memoria. Tiene un retardo propio de lectura o escritura a memoria, cuando corresponda. 
 Al iniciar la aplicación, el contenido de los bloques de memoria son 0. Cada bloque es de 16 bits y debe ser representado en hexadecimal.
 
-Modelo de memoria caché y sistema de coherencia:
+*Modelo de memoria caché y sistema de coherencia:
 Cada procesador tiene su caché L1, se pueden almacenar 4 bloques en cada una y posee correspondencia asociativa por set one-way.
 Esta memoria sirve para almacenar cuatro bloques que requiera el procesador. La información que debe contener es:
 Número de bloque.
